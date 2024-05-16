@@ -146,3 +146,69 @@ body {
     color: var(--text-color);
     padding: 20px 0;
 }
+
+
+/* ESTILOS FORMULARIO EMAIL JS */
+
+/* Estilos para el formulario de contacto */
+#contacto {
+    padding: 50px 0;
+}
+
+#contacto h2 {
+    color: #333;
+}
+
+#form {
+    max-width: 600px;
+    margin: auto;
+}
+
+.field {
+    margin-bottom: 20px;
+}
+
+.field label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.field textarea {
+    height: 150px;
+}
+
+.field input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.field input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+.invalid-feedback {
+    color: #dc3545;
+    font-size: 14px;
+    display: none;
+}
+
+.invalid-feedback.active {
+    display: block;
+}
