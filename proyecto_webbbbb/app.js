@@ -49,11 +49,11 @@ function removeItem(id) {
 }
 
 
-// AQUI EMPIEZA LA API DE SEATGEEK PARA MOSTRAR OTROS CONCIERTOS
 
 // se llama a updateCart para mostrar los datos iniciales del carrito
 updateCart();
 
+// AQUI EMPIEZA LA API DE SEATGEEK PARA MOSTRAR OTROS CONCIERTOS
 // codigo para obtener y mostrar los conciertos de SeatGeek
 const clientId = 'NDE2MTkyMTJ8MTcxNTg4NDI4Ni43NzY1NjMy'; // Client ID de SeatGeek
 const concertsContainer = document.getElementById('concerts');
