@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | Biografías de artistas y Compra de Entradas</title>
+ 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <a class="navbar-brand" href="#inicio-carrusel">
+        <img src="imagenes/vinyl logo.png" alt="LOGO" class="logo-img">
+        <span class="brand-text">Biografías y Compra Venta de Entradas.</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a href="artistas.html" class="nav-link">Artistas</a>
+            </li>
+            <li class="nav-item">
+                <a href="eventos.html" class="nav-link">Eventos</a>
+            </li>
+            <li class="nav-item">
+                <a href="nosotros.html" class="nav-link">Nosotros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="nosotros.html">Contáctanos</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="login.html" class="nav-link">Iniciar Sesión</a>
+            </li>
+            <li class="nav-item">
+                <a href="registro.html" class="nav-link">Registrarse</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="carrito.html" class="nav-link">
+                    <i class="fas fa-shopping-cart"></i> Carrito
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div id="inicio-carrusel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#inicio-carrusel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#inicio-carrusel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#inicio-carrusel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="imagenes/jeff.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="imagenes/rainbows.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="imagenes/coming.png" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#inicio-carrusel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#inicio-carrusel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+    </button>
+</div>
+
+<!-- Sección de Artistas Destacados -->
+<div id="seccion-artistas" class="container section">
+    <h2 class="section-heading">Artistas Destacados</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="imagenes/tom2.jpg" class="card-img-top" alt="Thom Yorke">
+                <div class="card-body">
+                    <h5 class="card-title">Thom Yorke</h5>
+                    <p class="card-text">Género: Rock Alternativo</p>
+                    <p class="card-text">Álbumes con Radiohead: "OK Computer", "Kid A", "In Rainbows"</p>
+                    <p class="card-text">Álbumes como solista: "The Eraser", "Anima"</p>
+                    <a href="biografias.html#thom_yorke" class="btn btn-primary">Ver Biografía</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="imagenes/jeff.jpg" class="card-img-top" alt="Jeff Buckley">
+                <div class="card-body">
+                    <h5 class="card-title">Jeff Buckley</h5>
+                    <p class="card-text">Género: Rock Alternativo</p>
+                    <p class="card-text">Álbumes: "Grace", "Sketches for My Sweetheart the Drunk"</p>
+                    <p class="card-text">Canción más famosa: "Hallelujah"</p>
+                    <a href="biografias.html#jeff_buckley" class="btn btn-primary">Ver Biografía</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="imagenes/adele.jpg" class="card-img-top" alt="Adele">
+                <div class="card-body">
+                    <h5 class="card-title">Adele</h5>
+                    <p class="card-text">Género: Pop, Soul</p>
+                    <p class="card-text">Álbumes: "19", "21", "25"</p>
+                    <p class="card-text">Canción más famosa: "Someone Like You"</p>
+                    <a href="biografias.html#adele" class="btn btn-primary">Ver Biografía</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sección de Eventos -->
+<div id="seccion-eventos" class="container section">
+    <h2 class="section-heading">Eventos</h2>    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="imagenes/evento1.png" class="img-fluid rounded-start" alt="Evento 1">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h3 class="card-title">Concierto en Vivo</h3>
+                            <p class="card-text">Fecha: 10 de mayo, 2024</p>
+                            <p class="card-text">Lugar: Teatro Municipal</p>
+                            <p class="card-text">Hora: 19:00</p>
+                            <p class="card-text">Descripción: Disfruta de una noche de música en vivo con artistas locales e invitados especiales.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="imagenes/evento2.png" class="img-fluid rounded-start" alt="Evento 2">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h3 class="card-title">Festival de Música</h3>
+                            <p class="card-text">Fecha: 25 de junio, 2024</p>
+                            <p class="card-text">Lugar: Parque Central</p>
+                            <p class="card-text">Hora: 16:00</p>
+                            <p class="card-text">Descripción: Únete a nosotros para celebrar la diversidad musical en nuestro festival anual.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container text-center">
+        <p>&copy; 2024 Proyecto Web de Música. Todos los derechos reservados.</p>
+        <p>Síguenos en 
+            <a href="#" class="text-light">Facebook</a>, 
+            <a href="#" class="text-light">Twitter</a>, 
+            <a href="#" class="text-light">Instagram</a>.
+        </p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
