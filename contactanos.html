@@ -34,7 +34,7 @@
                     <a href="nosotros.html" class="nav-link">Nosotros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contactanos.html">Contáctanos</a>
+                    <a class="nav-link" href="#contacto">Contáctanos</a>
                 </li>
             </ul>
             <ul class="navbar-nav">
@@ -54,19 +54,38 @@
         </div>
     </nav>
 
-<div class="container mt-5">
-    <h1 class="text-center">Sobre Nosotros</h1>
-    <div class="row justify-content-center">
-        <div class="col-md-8 text-center">
-            <img src="imagenes/vinyl logo.png" alt="Logo" class="img-fluid my-4" style="max-height: 200px;">
-            <p>Bienvenido a nuestro Proyecto Web de Música. Somos un equipo apasionado por la música y dedicados a proporcionar la mejor experiencia de biografías de artistas y venta de entradas.</p>
-            <h2>Nuestra Misión</h2>
-            <p>Nuestra misión es conectar a los fans con sus artistas favoritos y facilitar el acceso a información y eventos de manera sencilla y efectiva. Queremos ser el punto de referencia para todos los amantes de la música, ofreciendo contenido detallado y actualizaciones constantes.</p>
-            <h2>El Equipo</h2>
-            <p>Contamos con un equipo multidisciplinario de profesionales de la música, el diseño y la tecnología, todos comprometidos en brindar la mejor experiencia posible a nuestros usuarios. Cada miembro del equipo aporta su propia pasión y experiencia para hacer de este proyecto una realidad.</p>
-        </div>
+<!-- Contáctanos -->
+    <div class="container">
+        <h2 class="text-center mb-4">Contáctanos</h2>
+        <form id="form">
+            <div class="field">
+              <label for="nombre">nombre</label>
+              <input type="text" name="nombre" id="nombre" required>
+            </div>
+            <div class="field">
+              <label for="celular">celular</label>
+              <input type="text" name="celular" id="celular" required minlength="9">
+            </div>
+            <div class="field">
+              <label for="email">email</label>
+              <input type="text" name="email" id="email" required>
+            </div>
+            <div class="field">
+              <label for="pais">pais</label>
+              <input type="text" name="pais" id="pais">
+            </div>
+            <div class="field">
+              <label for="ciudad">ciudad</label>
+              <input type="text" name="ciudad" id="ciudad">
+            </div>
+            <div class="field">
+              <label for="consulta">consulta</label>
+              <input type="text" name="consulta" id="consulta" required>
+            </div>
+          
+            <input type="submit" class="btn btn-success" id="button" value="Send Email" >
+          </form>
     </div>
-</div>
 
     <!-- Modal del carrito -->
     <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
