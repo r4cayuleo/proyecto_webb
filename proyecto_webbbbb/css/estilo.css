@@ -1,0 +1,214 @@
+:root {
+    --primary-color: #333;
+    --secondary-color: #777;
+    --background-color: #f4f4f4;
+    --text-color: #fff;
+    --accent-color: #007bff;
+    --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    --font-family: 'Arial', sans-serif;
+    --font-size-large: 20px;
+}
+
+/* Global Styles */
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styles */
+.navbar-custom {
+    background-color: var(--primary-color);
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover {
+    color: var(--accent-color);
+}
+
+/* Logo Styles */
+.logo-img {
+    height: 40px;
+    margin-right: 10px;
+    vertical-align: middle; /* Alinea el logo con el texto */
+}
+
+.brand-text {
+    font-size: var(--font-size-large);
+    vertical-align: middle;
+}
+
+/* Login and Register Container Styles */
+.login-container, .register-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: var(--text-color);
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+}
+
+.login-container h2, .register-container h2 {
+    text-align: center;
+    color: var(--primary-color);
+}
+
+/* Carousel Styles */
+.carousel-item {
+    height: 65vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    background-size: cover;
+}
+
+.carousel-indicators button {
+    background-color: var(--secondary-color);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #000;
+    border-radius: 20%;
+    width: 45px;
+    height: 45px;
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.card-body {
+    background-color: var(--text-color);
+}
+
+.card-title {
+    color: var(--primary-color);
+}
+
+.card-text {
+    color: var(--secondary-color);
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+/* Section Styles */
+.section {
+    padding: 60px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+.footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 20px 0;
+}
+
+
+/* ESTILOS FORMULARIO EMAIL JS */
+
+/* Estilos para el formulario de contacto */
+#contacto {
+    padding: 50px 0;
+}
+
+#contacto h2 {
+    color: #333;
+}
+
+#form {
+    max-width: 600px;
+    margin: auto;
+}
+
+.field {
+    margin-bottom: 20px;
+}
+
+.field label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.field textarea {
+    height: 150px;
+}
+
+.field input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.field input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+.invalid-feedback {
+    color: #dc3545;
+    font-size: 14px;
+    display: none;
+}
+
+.invalid-feedback.active {
+    display: block;
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Coordinación de eventos de Proyecto Web de Música. Conoce los próximos eventos con Thom Yorke y Jeff Buckley.">
+    <meta name="keywords" content="eventos, música, conciertos, Thom Yorke, Jeff Buckley">
+    <title>Eventos | Proyecto Web de Música</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="css/estilo.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <a class="navbar-brand" href="#inicio-carrusel">
+            <img src="imagenes/vinyl logo.png" alt="LOGO" class="logo-img">
+            <span class="brand-text">Biografías y Compra Venta de Entradas.</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="artistas.html" class="nav-link">Artistas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="eventos.html" class="nav-link">Eventos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="nosotros.html" class="nav-link">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="nosotros.html">Contáctanos</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link">Iniciar Sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a href="registro.html" class="nav-link">Registrarse</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <i class="fas fa-shopping-cart"></i> Carrito (<span id="cart-count">0</span>)
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido de la página -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Próximos Eventos</h2>
+        <!-- Evento 1 con Thom Yorke -->
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="imagenes/tom2.jpg" class="img-fluid rounded-start" alt="Thom Yorke">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h3 class="card-title">Concierto de Thom Yorke</h3>
+                        <p class="card-text">Fecha: 15 de mayo, 2024</p>
+                        <p class="card-text">Lugar: Estadio Nacional</p>
+                        <p class="card-text">Hora: 20:00</p>
+                        <a href="thom_yorke_biografia.html" class="btn btn-primary">Ver Biografía</a>
+                        <!-- Formulario para comprar entradas -->
+                        <form onsubmit="addToCart('Thom Yorke', document.getElementById('num-entradas-thom').value); return false;">
+                            <div class="mb-3">
+                                <label for="num-entradas-thom" class="form-label">Número de entradas:</label>
+                                <input type="number" class="form-control" id="num-entradas-thom" name="quantity" min="1" value="1">
+                            </div>
+                            <button type="submit" class="btn btn-success">Comprar Entradas</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Evento 2 con Jeff Buckley -->
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="imagenes/jeff-buckley.jpg" class="img-fluid rounded-start" alt="Jeff Buckley">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h3 class="card-title">Concierto de Jeff Buckley</h3>
+                        <p class="card-text">Fecha: 20 de junio, 2024</p>
+                        <p class="card-text">Lugar: Teatro Metropolitano</p>
+                        <p class="card-text">Hora: 19:30</p>
+                        <a href="jeff_buckley_biografia.html" class="btn btn-primary">Ver Biografía</a>
+                        <!-- Formulario para comprar entradas -->
+                        <form onsubmit="addToCart('Jeff Buckley', document.getElementById('num-entradas-jeff').value); return false;">
+                            <div class="mb-3">
+                                <label for="num-entradas-jeff" class="form-label">Número de entradas:</label>
+                                <input type="number" class="form-control" id="num-entradas-jeff" name="quantity" min="1" value="1">
+                            </div>
+                            <button type="submit" class="btn btn-success">Comprar Entradas</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal del carrito -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul id="cart-items" class="list-group">
+                        <!-- Elementos del carrito -->
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-success" onclick="checkout()">Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2024 Proyecto Web de Música. Todos los derechos reservados.</p>
+            <p>Síguenos en 
+                <a href="#" class="text-light">Facebook</a>, 
+                <a href="#" class="text-light">Twitter</a>, 
+                <a href="#" class="text-light">Instagram</a>.
+            </p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FontAwesome para los iconos -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- JavaScript personalizado -->
+    <script src="app.js"></script>
+</body>
+</html>
