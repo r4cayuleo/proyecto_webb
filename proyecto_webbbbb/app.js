@@ -104,40 +104,87 @@ function checkout() {
 document.querySelector('[data-bs-target="#cartModal"]').addEventListener('click', renderCartItems);
 
 
-// clave API de Ticketmaster
+// AQUI EMPIEZA EL CODIGO DE LA API
+// Clave API de Ticketmaster
 const apiKey = 'CGGZDZbd2Du3f5HVuhZ2UrWhqmdzaBCc';
+// URL de la API de Ticketmaster para obtener eventos de música
 const url = `https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&apikey=${apiKey}`;
 
 // Función para obtener y mostrar los conciertos recomendados
 function cargarConciertosRecomendados() {
+    // Llamada a la API usando fetch
     fetch(url)
-        .then(response => response.json())
+        .then(response => response.json()) // Convierte la respuesta en un objeto JSON
         .then(data => {
+            // Se obtiene la lista de eventos del objeto JSON
             const eventos = data._embedded.events;
+            // Se selecciona el contenedor para mostrar los conciertos recomendados
             const conciertosContainer = document.getElementById('conciertos-recomendados');
+            // Limpia cualquier contenido anterior en el contenedor
             conciertosContainer.innerHTML = '';
 
+            // Objeto para contar la cantidad de conciertos por artista
+            const artistCounts = {};
+            // Array para rastrear el número de artistas diferentes mostrados
+            const displayedArtists = [];
+
+            // Itera sobre cada evento
             eventos.forEach(evento => {
-                const conciertoElement = document.createElement('div');
-                conciertoElement.classList.add('col-md-4');
+                // Nombre del artista principal del evento
+                const artista = evento._embedded.attractions[0].name;
 
-                conciertoElement.innerHTML = `
-                    <div class="card">
-                        <img src="${evento.images[0].url}" class="card-img-top" alt="${evento.name}">
-                        <div class="card-body">
-                            <h5 class="card-title">${evento.name}</h5>
-                            <p class="card-text">Fecha: ${evento.dates.start.localDate}</p>
-                            <p class="card-text">Lugar: ${evento._embedded.venues[0].name}</p>
-                            <a href="${evento.url}" class="btn btn-primary" target="_blank">Comprar Entradas</a>
+                // Fecha del evento
+                const fechaEvento = new Date(evento.dates.start.localDate);
+                const añoEvento = fechaEvento.getFullYear();
+
+                // Filtra eventos para mostrar solo los de 2024 y 2025
+                if (añoEvento !== 2024 && añoEvento !== 2025) {
+                    return;
+                }
+                
+                // Si el artista no está en el array y ya hay 4 artistas, no agregue más conciertos
+                if (!displayedArtists.includes(artista) && displayedArtists.length >= 4) {
+                    return;
+                }
+
+                // Inicializa el contador para el artista si no existe
+                if (!artistCounts[artista]) {
+                    artistCounts[artista] = 0;
+                }
+
+                // Solo agrega el concierto si el artista tiene menos de 3 conciertos mostrados
+                if (artistCounts[artista] < 3) {
+                    // Crea un elemento de tarjeta para el concierto
+                    const conciertoElement = document.createElement('div');
+                    conciertoElement.classList.add('col-md-4');
+
+                    // Define el contenido HTML de la tarjeta
+                    conciertoElement.innerHTML = `
+                        <div class="card">
+                            <img src="${evento.images[0].url}" class="card-img-top" alt="${evento.name}">
+                            <div class="card-body">
+                                <h5 class="card-title">${evento.name}</h5>
+                                <p class="card-text">Fecha: ${evento.dates.start.localDate}</p>
+                                <p class="card-text">Lugar: ${evento._embedded.venues[0].name}</p>
+                                <a href="${evento.url}" class="btn btn-primary" target="_blank">Comprar Entradas</a>
+                            </div>
                         </div>
-                    </div>
-                `;
+                    `;
 
-                conciertosContainer.appendChild(conciertoElement);
+                    // Agrega la tarjeta al contenedor
+                    conciertosContainer.appendChild(conciertoElement);
+                    // Incrementa el contador para el artista
+                    artistCounts[artista]++;
+                    
+                    // Si es la primera vez que se muestra un concierto de este artista, se agrega al array de artistas mostrados
+                    if (!displayedArtists.includes(artista)) {
+                        displayedArtists.push(artista);
+                    }
+                }
             });
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => console.error('Error:', error)); // Maneja cualquier error en la llamada a la API
 }
 
-// Llamar a la función para cargar los conciertos cuando se cargue la página
+// Función para cargar los conciertos cuando se cargue la página
 document.addEventListener('DOMContentLoaded', cargarConciertosRecomendados);
